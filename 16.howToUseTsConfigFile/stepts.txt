@@ -1,0 +1,13 @@
+in terminal
+tsc --init
+will get tsConfig File in the left side bar
+target : in which version need to compiole the js code
+fo modern : ES Next , but this wont work in the older browsers
+Module : on which format the code need to convert : if we use UMD we can use require and import. If the project is nodejs then use common js
+
+
+once we did verything, need to mention that all our code will be in the src folder, then move the index.ts file, and then create a public folder, and all the js file should be in this folder
+
+in the tsConfigFile: we need to mention these
+"rootDir" : "./src"
+"outDir" : "./public"
