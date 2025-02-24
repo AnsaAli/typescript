@@ -4,9 +4,11 @@ interface TaskListProps {
   tasks: string[];
   onDelete : (indesx : number)=>void;
   onUpdate :(index : number) =>void
+  onMark : (index:  number)=>void
+  doneTask : boolean[]
 }
 
-const TaskList: React.FC<TaskListProps> = ({ tasks, onDelete , onUpdate}) => {
+const TaskList: React.FC<TaskListProps> = ({ tasks, onDelete , onUpdate, onMark,doneTask}) => {
 
 
   return (
@@ -21,6 +23,7 @@ const TaskList: React.FC<TaskListProps> = ({ tasks, onDelete , onUpdate}) => {
             
               <button className='border border-green-500 p-2 rounded-md ml-5 mb-2 text-green-500' onClick={()=>onUpdate(index)}>Edit</button>
               <button className=' border border-red-500 p-2 rounded-md ml-5 mb-2 text-red-500' onClick={()=>onDelete(index)} >Delete</button>
+              <button className=' border border-red-500 p-2 rounded-md ml-5 mb-2 text-red-500' onClick={()=>onMark(index)} >{doneTask[index] ? 'completed' : 'mark as done'}</button>
             </div>
            
           ))) : <p className="text-white">No task assigned!</p> }
